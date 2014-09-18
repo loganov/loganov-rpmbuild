@@ -1,0 +1,1 @@
+deafult['rpm']['spec']['root_dir'] = '/var/build/spec'

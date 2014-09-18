@@ -6,6 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
 include_recipe "loganov-java"
 include_recipe "loganov-jenkins"
 include_recipe "loganov-nginx"
@@ -16,6 +17,11 @@ end
 
 package 'rpm-build'
 
+directory "#{node['rpm']['spec']['root_dir']}"
+
 jenkins_plugin 'ws-cleanup' do
 	action :install
 end
+
+#jenkins_job 'rpm-collectd' do
+#end

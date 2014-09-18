@@ -1,0 +1,33 @@
+Summary: <%= @summary %> 
+Name: <%= @name %> 
+Version: <%= @version %> 
+Release: <%= @release %>  
+License: <%= @license %>  
+Group: <%= @group %> 
+Source: <%= @name %>-<%= @version %>.tar.gz
+Prefix: <%= @prefix %>  
+URL: <%= @url %>  
+Vendor: <%= @vendor %>  
+Buildroot: <%= @buildroot %>  
+BuildRequires: <%= @build_requires %>  
+Requires: <%= @requires %>  
+
+%description 
+<%= @description %>   
+
+%prep # unpack the source and cd into the source directory 
+%setup -q # building the project 
+
+%build 
+%configure 
+make
+
+%install 
+%makeinstall 
+
+#%clean 
+#rm -rf %{buildroot} 
+
+%files 
+%defattr(-,root,root) 
+<%= @file_path %> 
