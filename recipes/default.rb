@@ -14,4 +14,8 @@ yumgroup "Development Tools" do
 	action :install 
 end
 
-package 'fedora-packager'
+package 'rpm-build'
+
+jenkins_plugin 'ws-cleanup' do
+	action :install
+end
